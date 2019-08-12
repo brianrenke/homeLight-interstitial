@@ -5,12 +5,17 @@ html {
 }
 
 body {
-  background-image: url("bg-image.jpg");
+  background-image: url("bg-image_mobile.jpg");
   background-size: cover;
   max-width: 120rem;
   margin: auto;
   padding: 0 2rem;
   height: 100%;
+}
+
+.content {
+  height: 100%;
+  padding-top: 4rem;
 }
 
 /* fonts */
@@ -23,9 +28,9 @@ html {
 }
 
 h1 {
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: 700;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
   margin: 0;
   padding-bottom: 3rem;
   color: #FFFFFF;
@@ -57,7 +62,7 @@ h4 {
 
 p {
   font-size: 2rem;
-  line-height: 3.5rem;
+  line-height: 3rem;
   margin: 0;
   padding: 0 0 1rem 0;
   color: #FFFFFF;
@@ -82,25 +87,29 @@ html {
 }
 
 /* Elements */
-.content {
-  height: 100%;
-}
+/* Vertically center div on page */
 
 .subheader {
-  padding-bottom: 7rem;
+  padding: 0 1rem 4rem 1rem;
 }
 
 .list {
-  display: inline-block;
   text-align: left;
 }
 
 .list ul {
+  margin: auto;
+  width: 100%;
   list-style: none;
+  padding: 0 0 2rem 1rem;
 }
 
-.fa-check-circle {
-  color: #46B6FF;
+.list ul li {
+  padding-bottom: 2rem;
+}
+
+.list-text.col-xs-11 {
+  padding-left: 2rem;
 }
 
 /* Target determinate progress bar */
@@ -128,13 +137,44 @@ progress[value]::-webkit-progress-value {
   background-size: 100% 100%;
 }
 
+/* Breakpoint 768px*/
 @media only screen and (min-width: 48em) {
-  progress[value] {
-  /* Reset the default appearance */
-  -webkit-appearance: none;
-   appearance: none;
+  body {
+    background-image: url("bg-image_tablet.jpg");
+  }
 
-  width: 75%;
-  height: 1rem;
-  margin-bottom: 3rem;
+  h1 {
+    font-size: 4.5rem;
+    letter-spacing: -1px;
+  }
+
+  .list-text.col-xs-11 {
+    padding-left: 0;
+  }
+
+  .subheader {
+  padding-bottom: 5rem;
+  }
+
+  p {
+    line-height: 3.5rem;
+  }
+
+  .list ul {
+    width: 50%;
+    padding: 0 0 4rem 1rem;
+  }
+
+  progress[value] {
+    width: 75%;
+    height: 1rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Breakpoint 992px*/
+@media only screen and (min-width: 62em) {
+  body {
+    background-image: url("bg-image.jpg");
+  }
 }
